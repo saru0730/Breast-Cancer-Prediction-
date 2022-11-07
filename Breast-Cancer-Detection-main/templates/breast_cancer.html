@@ -1,0 +1,50 @@
+{% extends 'main.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <center><h1>Breast Cancer Predictor</h1></center>
+        <div class="card card-body" style="border: 1px solid rgb(243, 9, 9);">
+            <form class="form-horizontal" action="{{ url_for('predictPage') }}" method="POST">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid rgb(241, 8, 8);" class="form-control" type="text" name="radius_mean" placeholder="radius_mean">
+                            <p>mean of distances from center to points on the perimeter</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid rgb(248, 17, 17);" class="form-control" type="text" name="texture_mean" placeholder="texture_mean">
+                            <p>standard deviation of gray-scale values</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid rgb(253, 17, 17);" class="form-control" type="text" name="perimeter_mean" placeholder="perimeter_mean">
+                            <p>mean size of the core tumor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid rgb(245, 11, 11);" class="form-control" type="text" name="area_mean" placeholder="area_mean">
+
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <input style="border: 1px solid rgb(245, 13, 13);" class="form-control" type="text" name="smoothness_mean" placeholder="smoothness_mean">
+                            <p>mean of local variation in radius lengths</p>
+                        </div>
+                    </div>
+                   
+                </div>
+                <input type="submit" class="btn btn-info btn-block" value="Predict">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+{% endblock %}
